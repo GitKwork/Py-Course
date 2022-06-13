@@ -27,18 +27,20 @@ print('******************************\n')
 
 # В заданном списке вещественных чисел найдите разницу между максимальным и минимальным значением дробной части элементов.
 # Пример: [1.1, 1.2, 3.1, 5, 10.01] => 0.19
+#
 import math
 print('###### HW2 - Задание 3 ######')
+def n_dif(listt):
+    n_new = list(0 for i in range(0, len(listt)))
+    for i in range(0, len(listt)):
+        n_new[i] = listt[i] - math.trunc(listt[i])
+    return max(n_new) - min(n_new)
 print('Введите вещественные числа')
 n_flt = [float(z) for z in input().split()]
-# n_flt = list[float]
-print(n_flt)
-def ndif(mas):
-    for i in range(0, len(mas)):
-        n_new[i] = [mas[i] - math.trunc(mas[i])]
-    return max(n_new) - min(n_new)
-print(f'разницу между максимальным и минимальным значением дробной части={ndif(n_flt)}\n')
+f = round(n_dif(n_flt), 3)
+print(f'разницу между максимальным и минимальным значением дробной части={f}\n')
 print('******************************\n')
+
 
 # Написать программу преобразования десятичного числа в двоичное
 #
