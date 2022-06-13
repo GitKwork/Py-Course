@@ -32,10 +32,8 @@ print('###### HW2 - Задание 3 ######')
 print('Введите вещественные числа')
 n_flt = [float(z) for z in input().split()]
 n_flt = list[float]
-n_new = list[float]
 print(n_flt)
-# n_df = list(range(len(n_flt)))
-def ndif(mas):
+def ndif(mas: list()):
     for i in range(0, len(mas)):
         n_new[i] = [mas[i] - math.trunc(mas[i])]
     return max(n_new) - min(n_new)
