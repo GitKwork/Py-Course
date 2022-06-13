@@ -31,14 +31,13 @@ import math
 print('###### HW2 - Задание 3 ######')
 print('Введите вещественные числа')
 n_flt = [float(z) for z in input().split()]
-n_flt = list[float]
+# n_flt = list[float]
 print(n_flt)
-def ndif(mas: list()):
+def ndif(mas):
     for i in range(0, len(mas)):
         n_new[i] = [mas[i] - math.trunc(mas[i])]
     return max(n_new) - min(n_new)
-f = ndif(n_flt)
-print(f'разницу между максимальным и минимальным значением дробной части={f}\n')
+print(f'разницу между максимальным и минимальным значением дробной части={ndif(n_flt)}\n')
 print('******************************\n')
 
 # Написать программу преобразования десятичного числа в двоичное
