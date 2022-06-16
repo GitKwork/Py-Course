@@ -1,78 +1,76 @@
 # 1. Найти НОК двух чисел
 #
 
-# print('###### HW3 - Задание 1 ######')
-# import sys
-# def Nok(number1, number2):
-#     break_out_flag = False
-#     # NOK_number = 1
-#     for i in range(1, sys.maxsize**10):
-#         if (i % number1 == 0) and (i % number2 == 0):
-#             # i = NOK_number
-#             print(i)
-#             break_out_flag = True
-#             return i
-#         if break_out_flag:
-#             break
-# print('Введите  число Number 1 = ')
-# number11 = int(input())
-# print('Введите  число Number 2 = ')
-# number22 = int(input())
-# print(number11, number22)
-# print(f'НОК двух чисел = {Nok(number11, number22)}\n')
-# print('******************************\n')
+print('###### HW3 - Задание 1 ######')
+import sys
+def Nok(number1, number2):
+    break_out_flag = False
+    for i in range(1, sys.maxsize**10):
+        if i % number1 == 0 and i % number2 == 0:
+            print(i)
+            break_out_flag = True
+            return i
+        if break_out_flag:
+            break
+print('Введите  число Number 1 = ')
+number11 = int(input())
+print('Введите  число Number 2 = ')
+number22 = int(input())
+print(number11, number22)
+print(f'НОК двух чисел = {Nok(number11, number22)}\n')
+print('******************************\n')
 
 
 # 2. Вычислить число Пи c заданной точностью d
 # Пример: при d = 0.001,  c= 3.141.
 
-# print('###### HW3 - Задание 2 ######')
-# import math
-# print('Введите  число заданной точности d = ')
-# exact_number = float(input())
-# Pi_exact = (math.pi // exact_number)*exact_number
-# print(f'Нчисло Пи c заданной точностью d = {Pi_exact}\n')
-# print('******************************\n')
+print('###### HW3 - Задание 2 ######')
+import math
+print('Введите  число заданной точности d = ')
+exact_number = float(input())
+Pi_exact = (math.pi // exact_number)*exact_number
+print(f'Нчисло Пи c заданной точностью d = {Pi_exact}\n')
+print('******************************\n')
 
 
 # 3. Составить список простых множителей натурального числа N
 #
 
-# print('###### HW3 - Задание 3 ######')
-# def find_prime_divisor(number, n_div):
-#     for j in range(2, number+1):
-#         if number % j == 0 and number >= j:
-#             n_div.extend([j])
-#             find_prime_divisor(number // j, n_div)
-#             return n_div
-# n_div = [1]
-# print('Введите натуральноt число N = ')
-# number = int(input())
-# print(f'список простых множителей = {find_prime_divisor(number, n_div)}\n')
-# print('******************************\n')
+print('###### HW3 - Задание 3 ######')
+def find_prime_divisor(number, n_div):
+    for j in range(2, number+1):
+        if number % j == 0 and number >= j:
+            n_div.extend([j])
+            find_prime_divisor(number // j, n_div)
+            return n_div
+n_div = [1]
+print('Введите натуральноt число N = ')
+number = int(input())
+print(f'список простых множителей = {find_prime_divisor(number, n_div)}\n')
+print('******************************\n')
 
 
 # 4. Дана последовательность чисел. Получить список неповторяющихся элементов исходной последовательности
 # Пример: [1, 2, 3, 5, 1, 5, 3, 10] => [1, 2, 3, 5, 10]
 #
 
-# print('###### HW3 - Задание 4 ######')
-# list_numb = [1, 2, 3, 5, 1, 5, 3, 10, 10, 10, 3, 3, 3, 3]
-# print(list_numb)
-# def list_non_repeat_elem(list1):
-#     new_list2 = list1.copy()
-#     for x in range(0, len(list1)):
-#         for y in range(x+1, len(list1)):
-#             if list1[x] == list1[y]:
-#                 new_list2[y] = 0
-#     for val in new_list2:
-#         if val == 0:
-#             new_list2.remove(0)
-#     while new_list2[-1] == 0:
-#         new_list2.pop(-1)
-#     return new_list2
-# print(f'список неповторяющихся элементов исходной последовательности =\n {list_non_repeat_elem(list_numb)}\n')
-# print('******************************\n')
+print('###### HW3 - Задание 4 ######')
+list_numb = [1, 2, 3, 5, 1, 5, 3, 10, 10, 10, 3, 3, 3, 3]
+print(list_numb)
+def list_non_repeat_elem(list1):
+    new_list2 = list1.copy()
+    for x in range(0, len(list1)):
+        for y in range(x+1, len(list1)):
+            if list1[x] == list1[y]:
+                new_list2[y] = 0
+    for val in new_list2:
+        if val == 0:
+            new_list2.remove(0)
+    while new_list2[-1] == 0:
+        new_list2.pop(-1)
+    return new_list2
+print(f'список неповторяющихся элементов исходной последовательности =\n {list_non_repeat_elem(list_numb)}\n')
+print('******************************\n')
 
 
 
@@ -82,10 +80,21 @@
 #
 
 print('###### HW3 - Задание 5 ######')
-
-
-
-print(f'список неповторяющихся элементов исходной последовательности =\n {list_non_repeat_elem(list_numb)}\n')
+with open('file_numbers.txt', 'w') as data:
+    data.write(' 11 22 33 44 55 66    77 88 99 10')
+path = 'file_numbers.txt'
+data = open(path, 'r')
+all_numb = []
+for line in data:
+    print(line)
+    all_numb.extend([int(item) for item in line.split()])
+all_numb = [y for y in all_numb if int(y) % 2 != 0]
+data.close()
+with open('file_numbers_modify.txt', 'w') as data:
+    for y in all_numb:
+        data.write(str(y) + ' ')
+    print(all_numb)
+data.close()
 print('******************************\n')
 
 
